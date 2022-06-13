@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>detail page</title>
+</head>
+<body>
+
+    <img src="{{ movie.cover.url }}"
+    {{ movie.title }}       <br>
+    {{ movie.description }}<br>
+    {{ movie.quality }}<br>
+    {{ movie.genre }}<br>
+    {{ movie.director }}<br>
+    {{ movie.country }}<br>
+
+
+<p>comment:</p>
+    {% for comment in comments %}
+        {{ comment.user.username }}<br>
+        {{ comment.comment }}<br>
+
+    {% endfor %}
+{% if user.is_authenticated %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ comment_form}}
+      <input type="submit" value="Submit">
+
+</form>
+{% endif %}
+
+</body>
+</html>

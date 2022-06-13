@@ -6,7 +6,7 @@
 </head>
 <body>
 {% for movie in movies %}
-   <a href="" > <h3>{{ movie.title }}</h3></a>
+   <a href="{% url 'detail_page' movie.id %}" > <h3>{{ movie.title }}</h3></a>
 {% endfor %}
 
 </body>

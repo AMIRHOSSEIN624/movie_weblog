@@ -130,3 +130,5 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 CRISPY_FORMS_TEMPLATE = 'bootstrap5'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
